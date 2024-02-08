@@ -1,5 +1,6 @@
 number = 10
 keep_going = True
+num_guesses = 3
 
 while keep_going:
     print("I'm thinking of a number...")
@@ -14,4 +15,9 @@ while keep_going:
         keep_going = False
         print(f"The number was {number}.")
     else:
-        print(f"Sorry! That's incorrect.")
+        num_guesses = num_guesses - 1
+        if num_guesses == 0:
+            keep_going = False
+            print(f"Sorry! You ran out of guesses. The number was {number}.")
+        else:
+            print(f"Incorrect. You have {num_guesses} left.")
